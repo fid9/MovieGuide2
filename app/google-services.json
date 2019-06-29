@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "456118672528",
+    "firebase_url": "https://movieguide-3dbb8.firebaseio.com",
+    "project_id": "movieguide-3dbb8",
+    "storage_bucket": "movieguide-3dbb8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456118672528:android:e7b7311f653b54a1",
+        "android_client_info": {
+          "package_name": "com.example.movieguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456118672528-o55o88nkk3r17199euevhv886fknda93.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.movieguide",
+            "certificate_hash": "3dba38cacef38684fd6f88a2130fe58e1708648c"
+          }
+        },
+        {
+          "client_id": "456118672528-t3bdpjc2kjntcjl2etm4ja1dminh7u0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa21gSivuSl6vhqf4928g26sIwTOlmaDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456118672528-t3bdpjc2kjntcjl2etm4ja1dminh7u0m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

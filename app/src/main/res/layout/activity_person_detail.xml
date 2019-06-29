@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonDetailActivity"
+    android:background="#ffffff">
+    
+    <com.github.florent37.diagonallayout.DiagonalLayout
+        android:id="@+id/person_details_diagonal_view"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:diagonal_angle="8"
+        app:diagonal_position="bottom"
+        app:diagonal_direction="right"
+        android:background="#ffffff"
+        >
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/person_details_profile_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.github.florent37.diagonallayout.DiagonalLayout>
+
+    <View
+        android:id="@+id/drop_shadow_1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/person_details_diagonal_view" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/person_details_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/drop_shadow_1"
+        android:text="Emri:"
+        android:gravity="center"
+        android:padding="1dp"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:fontFamily="@font/acme"
+        android:textStyle="bold"
+
+
+        />
+
+    <View
+        android:id="@+id/drop_shadow_2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/person_details_name"
+        />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/person_details_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/drop_shadow_2"
+        android:layout_marginTop="10dp"
+        >
+        
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+    <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/person_details_also_known_as_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                >
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I/e njohur si: "
+            android:textColor="#000"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            />
+                
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/person_details_also_known_as"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="10dp"
+
+
+            />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/person_details_birthday_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Datelindja: "
+                    android:textColor="#000"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/person_details_birthday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+
+          <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/person_details_place_of_birth_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vendlindja: "
+                    android:textColor="#000"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/person_details_place_of_birth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/person_details_deathday_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dita e Vdekjes: "
+                    android:textColor="#000"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/person_details_deathday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/person_details_known_for_department_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Departamenti: "
+                    android:textColor="#000"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/person_details_known_for_department"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/person_details_homepage_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Homepage: "
+                    android:textColor="#000"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/person_details_homepage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#3148ae"
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+     <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/person_details_biography_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            >
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Biografia: "
+                android:textColor="#000"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/person_details_biography"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="5dp"
+
+                />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/person_details_profile_images_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profilet"
+                    android:textColor="#000"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/person_details_profile_images_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:background="#e4e4e4"
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+
+
+
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+    </android.support.v4.widget.NestedScrollView>
+</RelativeLayout>

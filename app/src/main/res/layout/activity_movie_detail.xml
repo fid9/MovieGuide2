@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieDetailActivity"
+    android:background="#fff"
+    >
+
+    <com.github.florent37.diagonallayout.DiagonalLayout
+         android:id="@+id/movie_details_diagonal_view"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:diagonal_angle="8"
+        app:diagonal_position="bottom"
+        app:diagonal_direction="right"
+        android:background="#ffffff"
+        >
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/movie_details_poster_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.github.florent37.diagonallayout.DiagonalLayout>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/back_drop_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:gravity="bottom|end"
+        android:layout_marginEnd="29dp"
+        android:layout_marginTop="115dp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/movie_detail_poster_circle_image_view"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            app:civ_border_width="3dp"
+            app:civ_circle_background_color="#fff"
+            android:scaleType="centerCrop"
+
+            />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/movie_detail_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/acme"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            />
+        
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/rating_layout"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="151dp"
+        android:orientation="vertical"
+        android:background="#00000000"
+        >
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/acme"
+            android:gravity="center"
+            android:text="@string/vleresimi_mesatar"
+            android:textColor="#000"
+            android:textSize="18sp"
+            />
+        
+        <com.github.lzyzsd.circleprogress.ArcProgress
+            android:id="@+id/movie_detail_rating_bar"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            app:arc_finished_color="#5b0260"
+            app:arc_max="100"
+            app:arc_suffix_text_padding="0dp"
+            app:arc_suffix_text_size="12dp"
+            app:arc_text_color="#5b0260"
+            app:arc_text_size="16dp"
+            app:arc_unfinished_color="#cfcfcf"
+            />
+    </android.support.v7.widget.LinearLayoutCompat>
+
+
+
+    <View
+        android:id="@+id/shadow"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/back_drop_layout"
+        android:layout_marginTop="10dp"
+
+        />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/shadow"
+        android:layout_marginTop="10dp"
+        >
+        
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_detail_original_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/titulli"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:textColor="#000"
+
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/movie_detail_original_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_detail_original_language_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Gjuha: "
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:textColor="#000"
+
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/movie_detail_original_langauge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_detail_adult_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Adult: "
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:textColor="#000"
+
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/movie_detail_adult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_detail_status_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Statusi: "
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:textColor="#000"
+
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/movie_detail_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_detail_runtime_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Kohezgjatja: "
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:textColor="#000"
+
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/movie_detail_runtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_detail_budget_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Buxheti: "
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:textColor="#000"
+
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/movie_detail_budget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_detail_revenue_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Te ardhurat: "
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:textColor="#000"
+
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/movie_detail_revenue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_detail_genre_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Zhanri: "
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:textColor="#000"
+
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/movie_detail_genre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_detail_production_country_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Vendi prodhues: "
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:textColor="#000"
+
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/movie_detail_production_country"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_detail_release_date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Premiera: "
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:textColor="#000"
+
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/movie_detail_release_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_detail_homepage_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Homepage: "
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:textColor="#000"
+
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/movie_detail_homepage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_detail_overview_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Pershkrimi: "
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:textColor="#000"
+
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/movie_detail_overview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="5dp"
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_details_cast_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="5dp"
+
+                android:visibility="gone"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kasta_e_filmit"
+                    android:textColor="#000"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/movie_details_cast_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:background="#e4e4e4"
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_details_crew_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ekipi filmit: "
+                    android:textColor="#000"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/movie_details_crew_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:background="#e4e4e4"
+
+
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_details_production_company_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kompania_e_produksionit"
+                    android:textColor="#000"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/movie_details_production_company_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:background="#e4e4e4"
+
+
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_details_images_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Imazhet dhe posteret: "
+                    android:textColor="#000"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/movie_details_images_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:background="#e4e4e4"
+
+
+
+
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/movie_details_videos_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Video dhe Trailers: "
+                    android:textColor="#000"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/movie_details_videos_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:background="#e4e4e4"
+                    />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

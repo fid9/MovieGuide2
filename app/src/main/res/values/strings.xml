@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Movie Guide</string>
+    <string name="nuk_ka_me_video">Nuk ka me video...</string>
+    <string name="guide">guide</string>
+    <string name="movie">movie</string>
+    <string name="kasta_e_filmit">Kasta e filmit:</string>
+    <string name="kompania_e_produksionit">Kompania e produksionit:</string>
+    <string name="title_activity_login">Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="sign_in_with_facebook">SIGN IN WITH FACEBOOK</string>
+    <string name="sign_in_with_google">SIGN IN WITH GOOGLE+</string>
+    <string name="log_out">LOG OUT</string>
+    <string name="facebook_app_id" />
+    <string name="kerko">Kerko</string>
+    <string name="shkruaj_titullin">Shkruaj titullin...</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_table">TableActivity</string>
+    <string name="profilet">Profilet:</string>
+    <string name="vleresimi_mesatar">Vleresimi mesatar:</string>
+    <string name="titulli">Titulli:</string>
+</resources>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/movie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:includeFontPadding="true"
+                android:text="@string/movie"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:fontFamily="@font/acme"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guide"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.4" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:includeFontPadding="true"
+                android:text="@string/guide"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp"
+                app:fontFamily="@font/acme"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/movie"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:id="@+id/toolbar_shadows"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@+id/main_toolbar"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/toolbar_shadows" />
+
+    <org.angmarch.views.NiceSpinner
+        android:id="@+id/source_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_shadows"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/spinner_border"
+        android:padding="20dp"
+        app:textTint="#000" />
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/source_spinner"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/query_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/shkruaj_titullin"
+            android:inputType="text"
+            android:lines="1"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#393939" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/query_search_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:text="@string/kerko"
+            android:textAllCaps="false" />
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/result_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_layout" />
+
+
+
+</RelativeLayout>
+
+
+
